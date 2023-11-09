@@ -1,3 +1,13 @@
+.cart-widget-container {
+    display: flex;
+    align-items: center;
+}
+
+.cart-widget-container svg {
+    width: 30px;
+    height: 30px;
+}
+
 .numero-cart {
-    color: white;
+    margin-left: 10px;
 }

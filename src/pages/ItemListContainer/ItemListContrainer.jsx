@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import ItemCount from '../../components/ItemCount/ItemCount';
 import ItemList from '../../components/ItemList/ItemList';
 import './styles.css';
 
@@ -21,9 +20,8 @@ const ItemListContainer = () => {
 
     return (
         <div>
-           <h1>Lista de Item</h1>
-           <ItemCount />
-           <ItemList productList={productList}/>
+           <h1 className='h1'>Productos</h1>
+           <ItemList productList={productList} />
         </div>
 
 

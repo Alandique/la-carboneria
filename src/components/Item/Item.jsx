@@ -1,4 +1,4 @@
-
+import './styles.css';
 const Item = ({title, description, price, image}) => {
   return (
     <div className="card-container">

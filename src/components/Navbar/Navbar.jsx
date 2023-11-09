@@ -8,28 +8,30 @@ const Navbar = () => {
     return (
         <div className="navbar-container">
             <div>
-                <img alt='carbon' src={'./images/carbon.png'} width={'100px'}/>
-                <h1 className='h1'>La Carboneria</h1>
+
+                <Link  to={'/'} className="h1">
+                            La Carboneria
+                        </Link>
             </div>
             <div>
                 <ul className="list-container">
                     <li>
-                        <Link to={'/category/carbon3kg'} className="category-button">
+                        <Link to={'/category/electronics'} className="category-button">
                             Carbon 3Kg
                         </Link>
                     </li>
                     <li>
-                        <Link to={'/category/carbon5kg'} className="category-button">
+                        <Link to={'/category/jewelery'} className="category-button">
                             Carbon 5Kg
                         </Link>
                     </li>
                     <li>
-                        <Link to={'/category/carbon-a-granel'} className="category-button">
+                        <Link to={"/category/men's clothing"} className="category-button">
                             Carbon a granel
                         </Link>
                     </li>
                     <li>
-                        <Link to={'/category/otros'} className="category-button">
+                        <Link to={"/category/women's clothing"} className="category-button">
                             Otros
                         </Link>
                     </li>

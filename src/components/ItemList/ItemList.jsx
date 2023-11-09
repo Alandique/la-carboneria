@@ -38,7 +38,8 @@ const ItemList = () => {
 
     return (
         <div className="item-list-container">
-            {items.map((item) => (
+            {items.map((item) => {
+                return (
                 <Link className="stylesLink" to={"/item/" + item.id} key={item.id}>
                     <Item
                         title={item.title}
@@ -47,7 +48,8 @@ const ItemList = () => {
                         image={item.image}
                     />
                 </Link>
-            ))}
+            );
+            })}
         </div>
     );
 };
