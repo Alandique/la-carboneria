@@ -1,43 +1,47 @@
 import './styles.css';
 import CartWidget from '../CardWidget/CartWidget';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+
 
 const Navbar = () => {
     return (
         <div className="navbar-container">
             <div>
 
-                <Link  to={'/'} className="h1">
+                <NavLink  to={'/'} className="h1">
+                <img src="../Carbon_logo.png" alt="logo de carbon" className="logo" />
                             La Carboneria
-                        </Link>
+                        </NavLink>
             </div>
             <div>
                 <ul className="list-container">
                     <li>
-                        <Link to={'/category/electronics'} className="category-button">
-                            Carbon 3Kg
-                        </Link>
+                        <NavLink activeclassname="active" to={'/category/Alimento'} className="category-button">
+                            Alimentos
+                        </NavLink>
                     </li>
                     <li>
-                        <Link to={'/category/jewelery'} className="category-button">
-                            Carbon 5Kg
-                        </Link>
+                        <NavLink activeclassname="active" to={'/category/Leña'} className="category-button">
+                            Leña
+                        </NavLink>
                     </li>
                     <li>
-                        <Link to={"/category/men's clothing"} className="category-button">
-                            Carbon a granel
-                        </Link>
+                        <NavLink activeclassname="active" to={"/category/Huevos"} className="category-button">
+                            Huevos
+                        </NavLink>
                     </li>
                     <li>
-                        <Link to={"/category/women's clothing"} className="category-button">
+                        <NavLink activeclassname="active" to={"/category/Otros"} className="category-button">
                             Otros
-                        </Link>
+                        </NavLink>
                     </li>
                 </ul>
             </div>
+            <NavLink to={"/cart"} className="category-button">
             <CartWidget />
+                        </NavLink>
+            
         </div>
 
     );

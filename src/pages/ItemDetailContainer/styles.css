@@ -1,39 +1,33 @@
-.container{
-    padding-top: 50px;
-}
-.tarjeta-detalle {
+.item-detail-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+  }
+.item-detail-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 250px;
-    height:350px;
-    margin:0,0,0,10px;
+    height: 450px;
+    margin: 20px;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     box-sizing: border-box;
     overflow: hidden;
-}
-.titulo-tarjeta {
+  }
+  .card-title {
     font-weight: 600;
-    color: rgb(0, 0, 0);
+    color: #000;
     text-decoration: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-.card-description {
+  }
+  .card-description {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 150px;
     overflow: hidden;
-};
-
-.image {
-align-items: center;
-   
-};
+    word-wrap: break-word;
+    text-overflow: ellipsis;
+  }

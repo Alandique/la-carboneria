@@ -1,21 +1,22 @@
-import './styles.css';
-import * as Icon from 'react-bootstrap-icons';
-import ItemCount from '../ItemCount/ItemCount';
+ import './styles.css';
+ import * as Icon from 'react-bootstrap-icons';
+ import { CartContext } from '../../context/CartContext';
+ import React, { useContext } from 'react';
 
-const CartWidget = () => {
-    return (
-        <div className='cart-widget-container'>
-           <Icon.Cart color='white' size={30}/>
-           <div className='numero-cart'>
-            <h3></h3>
-           </div>
+ const CartWidget = () => {
+     const { productQuantity } =useContext(CartContext);
+     return (
+         <div className='cart-widget-container'>
+            <Icon.Cart color='white' size={30}/>
+            <div className='numero-cart'>
+             <h3>{productQuantity}</h3>
+            </div>
 
-           <ItemCount />
-        </div>
+         </div>
 
 
 
-    )
-}
+     )
+ }
 
-export default CartWidget
+ export default CartWidget

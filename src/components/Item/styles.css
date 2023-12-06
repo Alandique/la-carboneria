@@ -10,12 +10,13 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     box-sizing: border-box;
     overflow: hidden;
-    text-decoration: none;
+    text-decoration:none;
+    color: black;
 }
 .card-title {
     font-weight: 600;
     color: black;
-    text-decoration: none;
+    text-decoration:none;
 }
 .card-description {
     display: flex;
@@ -24,5 +25,5 @@
     justify-content: center;
     height: 150px;
     overflow: hidden;
-    text-decoration: none;
+    text-decoration:none;
 };

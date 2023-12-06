@@ -1,32 +1,39 @@
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import ItemDetail from "../../components/ItemDetail/ItemDetail";
+import ItemDetail from '../../components/ItemDetail/ItemDetail';
+import { getFirestore, doc, getDoc } from 'firebase/firestore';
+import './styles.css';
 
 const ItemDetailContainer = () => {
-    const [itemSelected, setItemSelected] = useState([null]);
-    const {id} = useParams();
-    
-    const fetchProduct =() => {
-        fetch(`https://fakestoreapi.com/products/${id}`)
-        .then((Response) => Response.json())
-        .then ((producto) =>setItemSelected(producto))
-        .catch ((error) => console.log(error));
-        
-    };
+  const [itemSelected, setItemSelected] = useState(null);
+  const { id } = useParams();
 
-useEffect (() => {
+  const fetchProduct = () => {
+    const db = getFirestore();
+    const querySnapshot = doc(db, 'Items', id);
+    getDoc(querySnapshot)
+      .then((res) => {
+        setItemSelected({
+          id: res.id,
+          ...res.data(),
+        });
+      })
+      .catch((err) => console.log(err));
+  };
+
+  useEffect(() => {
     fetchProduct();
-}, [id]);
+  }, []);
 
   return (
-    <div>
+    <div className='item-detail-container'>
       {id && (
-        <div className='item-detail-container'>
-       <ItemDetail  itemSelected={itemSelected} />
-    </div>
+        <div className="item-detail-card">
+          <ItemDetail itemSelected={itemSelected} />
+        </div>
       )}
-      </div>
+    </div>
   );
 };
 
-export default ItemDetailContainer
+export default ItemDetailContainer;

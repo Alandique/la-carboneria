@@ -30,3 +30,13 @@
 .h1{
     text-decoration: none;
 }
+
+.active {
+    color: antiquewhite;
+}
+
+.logo{
+    width: 50px; 
+  height: auto;
+  margin-right: 10px;
+}
